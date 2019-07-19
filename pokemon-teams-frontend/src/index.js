@@ -45,9 +45,21 @@ function createTrainerCard(){
         let li = document.createElement('li')
         li.innerText = console.log(pokemon.name)
         ul.appendChild(li)
+        let realeaseBtn = document.createElement('BUTTON')
+        realeaseBtn.className = 'release'
+        realeaseBtn.innerText = 'release'
+        realeaseBtn.setAttribute('data-pokemon-id', pokemon.id)
+        realeaseBtn.addEventListener('click', handleReleaseBtn)
+        li.appendChild(realeaseBtn)
     })
 
-    let realeaseBtn = document.create
+    
+
+    let addBtn = document.createElement('BUTTON')
+    addBtn.innerText = 'Add Pokemon'
+    addBtn.setAttribute("data-trainer-id", trainer.id)
+    addBtn.addEventListener("click", handleAddBtn)
+
 
 }
 
