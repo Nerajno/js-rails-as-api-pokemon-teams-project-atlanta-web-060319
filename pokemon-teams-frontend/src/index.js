@@ -6,19 +6,49 @@ document.addEventListener("DOMContentLoaded", setUpPage)
 
 function setUpPage(){
     
-    const div = document.createElement("div", className="card")
+    getTrainers()
 
-    const addPokeBtn = document.createElement("BUTTON", id="btn")
+}
 
-    const ul = document.createElement("ul")
-
-    div.appendChild(addPokeBtn)
-    div.appendChild(ul)
+function getTrainers(){
+    fetch(TRAINERS_URL)
+    .then(res => res.json())
+    .then(data => createTrainerList(data))
 }
 
 
 function getAllPokemon(){
     fetch(POKEMONS_URL)
     .then(res => res.json())
-    .then(data => createPokemonList)
+    .then(data => createPokemonList(data))
 }
+
+function createTrainerList(trainers){
+    trainers.forEach(createTrainerCard)
+}
+
+// function createPokemonList(){
+
+// }
+
+function createTrainerCard(){
+    const main = document.querySelector("main")
+
+    const div = document.createElement("div")
+    div.className = "card"
+
+    const p = documents.createElement("p")
+    p.innerText = trainer.name
+
+    const ul = document.createElement("ul")
+    trainer.pokemon.forEach(function(pokemon){
+        let li = document.createElement('li')
+        li.innerText = console.log(pokemon.name)
+        ul.appendChild(li)
+    })
+
+    let realeaseBtn = document.create
+
+}
+
+
